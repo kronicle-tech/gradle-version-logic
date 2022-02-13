@@ -1,0 +1,15 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+    }
+
+    plugins {
+        id "com.github.johnrengelman.shadow" version shadowPluginVersion apply false
+    }
+}
+
+rootProject.name = "gradle-version-logic"
+include "gradle-version-logic"
+include "subprojects:base-services"
+include "subprojects:dependency-management"
+include "subprojects:internal-testing"

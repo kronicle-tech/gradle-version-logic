@@ -1,0 +1,12 @@
+plugins {
+    id "java-library"
+    id "com.github.johnrengelman.shadow"
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation project(":subprojects:dependency-management")
+}
