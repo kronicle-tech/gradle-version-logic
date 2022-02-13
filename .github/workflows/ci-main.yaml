@@ -40,7 +40,7 @@ jobs:
       - name: Get version
         id: get_version
         run: |
-          set version=$(./gradlew currentVersion -q -Prelease.quiet)
+          version=$(./gradlew currentVersion -q -Prelease.quiet)
           echo "Version: $version"
           echo ::set-output name=VERSION::$version
 
