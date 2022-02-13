@@ -9,9 +9,8 @@ java {
 publishing {
     publications {
         shadow(MavenPublication) {
-            artifact shadowJar
-
             artifactId archivesBaseName
+            artifacts = [shadowJar, javadocJar, sourcesJar]
 
             pom {
                 name = "$group:$archivesBaseName"

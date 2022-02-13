@@ -39,7 +39,10 @@ jobs:
 
       - name: Get version
         id: get_version
-        run: echo ::set-output name=VERSION::$(./gradlew currentVersion -q -Prelease.quiet)
+        run: |
+          set version=$(./gradlew currentVersion -q -Prelease.quiet)
+          echo "Version: $version"
+          echo ::set-output name=VERSION::$version
 
       - name: Publish JARs to Maven Central
         run: ./gradlew --no-parallel publish
