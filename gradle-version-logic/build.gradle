@@ -10,6 +10,12 @@ apply from: "$rootDir/gradle/publish.gradle"
 
 shadowJar {
     archiveClassifier = null
+
+    minimize {
+        exclude(project(":subprojects:base-services"))
+        exclude(project(":subprojects:dependency-management"))
+        exclude(dependency("org.codehaus.groovy:groovy-all:"))
+    }
 }
 
 dependencies {
