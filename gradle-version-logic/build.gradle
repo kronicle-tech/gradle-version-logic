@@ -11,10 +11,13 @@ apply from: "$rootDir/gradle/publish.gradle"
 shadowJar {
     archiveClassifier = null
 
+    dependencies {
+        include(project(":subprojects:base-services"))
+        include(project(":subprojects:dependency-management"))
+    }
+
     minimize {
-        exclude(project(":subprojects:base-services"))
-        exclude(project(":subprojects:dependency-management"))
-        exclude(dependency("org.codehaus.groovy:groovy-all:"))
+        include(dependency("com.google.guava:guava:"))
     }
 }
 
