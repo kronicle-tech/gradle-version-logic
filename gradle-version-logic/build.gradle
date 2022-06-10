@@ -12,8 +12,8 @@ shadowJar {
     archiveClassifier = null
 
     minimize {
-        exclude(project(":base-services"))
-        exclude(project(":dependency-management"))
+        exclude(project(":subprojects:base-services"))
+        exclude(project(":subprojects:dependency-management"))
         exclude(dependency("org.codehaus.groovy:groovy-all:"))
     }
 }
